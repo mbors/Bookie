@@ -25,8 +25,8 @@ class BookieBooksNav extends React.Component{
         render(){
             return(
                 <nav className="main-nav">
-               <ul onMouseLeave={this.handleMouseOut} className="main-nav-list">
-                   <li><a onMouseOver={this.handleMouseOver} href="">Bookie Books</a>
+               <ul className="main-nav-list">
+                   <li onMouseLeave={this.handleMouseOut} onMouseEnter={this.handleMouseOver}><a href="">Bookie Books</a>
                             {this.state.submenu}
                     </li>
                    <li><a href="">Bookie Quotes</a>
