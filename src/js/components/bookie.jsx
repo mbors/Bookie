@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class BookieBooksNav extends React.Component{
+class BookieBooksSubNav extends React.Component{
     constructor(props){
             super(props);
             this.state={
@@ -38,8 +38,41 @@ class BookieBooksNav extends React.Component{
         }
 }
 
- class Header extends React.Component {
-    
+class BookieHiddenNav extends React.Component {
+    render(){
+        let styleDisplay = this.props.isOpen === true ? "block" : "none";
+        return(
+        <div className="bar-nav" style={{display: styleDisplay}}>
+            <nav className="main-nav-list-bar">
+                    <ul className="main-nav-list">
+                        <li><a href="" className="main-link">Bookie Books</a></li>
+                                <li><a href="">Future</a></li>
+                                <li><a href="">Now</a></li>
+                                <li><a href="">Past</a></li>
+                        <li><a href="" className="main-link">Bookie Quotes</a>
+                            </li>
+                        <li><a href="" className="main-link">Bookie Moods</a></li>
+                    </ul>
+            </nav>
+        </div>
+        )
+    }
+}
+
+ class Header extends React.Component {  
+     constructor(props){
+         super(props)
+         this.state = {
+             isOpen: false
+         }
+     }
+
+     handleClick = () => {
+         this.setState({
+            isOpen: !this.state.isOpen //== true ? false : true
+         })
+     }
+
     render(){
         return (
             <div>
@@ -52,35 +85,25 @@ class BookieBooksNav extends React.Component{
                     <img className="second-unicorn" src="mock-ups/img/unicorn2.png"/>
                 </a>
             </h1>
-            <BookieBooksNav/>
-           <div className="main-nav-toggle">
+            <BookieBooksSubNav/>
+           <div onClick={this.handleClick} className="main-nav-toggle">
                <img src="mock-ups/img/book3.png"/>
            </div>
+
         </div>
     </header>
+    <BookieHiddenNav isOpen={this.state.isOpen}/>
     </div>
         )
     }
  }
+
 
 class Bookie extends React.Component {
     render(){
         return  (
             <div>
             <Header/>
-    <div className="bar-nav">
-            <nav className="main-nav-list-bar">
-                    <ul className="main-nav-list">
-                        <li><a href="" className="main-link">Bookie Books</a></li>
-                                <li><a href="">Future</a></li>
-                                <li><a href="">Now</a></li>
-                                <li><a href="">Past</a></li>
-                        <li><a href="" className="main-link">Bookie Quotes</a>
-                            </li>
-                        <li><a href="" className="main-link">Bookie Moods</a></li>
-                    </ul>
-            </nav>
-    </div>
     <div className="main-section">
         <div className="container">
              <div className="section1">
