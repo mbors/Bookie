@@ -30,6 +30,14 @@ body {
         width: 140px;
         height: 140px;
     }
+    a {
+        text-decoration: none;
+        color: $myDark; 
+        transition: 0.2s all;
+        &:hover{
+            color: $myBlue; 
+        }
+    }
     .second-unicorn{
         position: absolute; 
         margin-top: -158px;
@@ -100,7 +108,6 @@ body {
         @include myGradientTop; 
         max-width: 700px;
         margin: 0 auto; 
-        height: 500px; 
     }
     .section1 {
        max-width: 600px; 
@@ -113,20 +120,35 @@ body {
                color: $myBlue
            }
        }
+       h2 {
+           padding-bottom: 20px;
+       }
        .article-content{
            display: flex; 
            flex-direction: row; 
            justify-content: center; 
+           align-items: center; 
+           padding-bottom: 50px;
           .snippet{
-              padding-left: 20px;
+              padding-left: 40px;
+              padding-right: 40px;
               width: 400px;
+          }
+          .article-title {
+            align-items: center; 
+            font-size: 18px;
+            font-weight: 900; 
+            max-width: 30%;
+            color: $myPink; 
           }
           a {
               text-decoration: none; 
-              color: $myDark; 
-              transition: 0.2s all;
+              color: $myPink; 
+              transition: 0.2s all; 
+              border-bottom: 1px solid $myBlue; 
               &:hover {
                   color: $myBlue; 
+                  border-bottom: 1px solid $myPink;
               }
           }
        }
@@ -139,7 +161,7 @@ body {
 footer {
     .container {
         @include myGradientBottom; 
-        font-size: 23px; 
+        font-size: 18px; 
         max-width: 700px;
         margin: 0 auto; 
         height: 50px; 
@@ -159,8 +181,22 @@ footer {
             font-size: 12px; 
             
         }
+        .social-media {
+            img {
+                padding-right: 5px;
+            }
+        }
+        .bookie-map {
+            display: flex; 
+            align-items: center; 
+            a {
+                padding-left: 15px;
+            }
+        }
     }
 }
+
+//navigation toggle
 .main-nav-toggle {
     display: none; 
     img {
@@ -174,7 +210,13 @@ footer {
 
 //media queries
 @media (max-width: 950px){
+    .main-logo{
+        padding-left: 20px;
+    }
     .main-nav-list {
+        ul{
+            padding-left: 20px;
+        }
         li {
             padding: 10px; 
         }
@@ -222,6 +264,7 @@ footer {
     
 
 @media(max-width: 450px){
+
     .bar-nav {
         height: 100px; 
     }
@@ -248,13 +291,27 @@ footer {
     .main-section {
         .section1{
            margin-top: 0; 
+           .article-content {
+               display: flex; 
+               flex-direction: column; 
+               align-items: center; 
+               justify-content: center; 
+               .article-title{
+                   max-width: 80%; 
+                   padding-bottom: 10px;
+               }
+               .snippet{
+                   max-width: 100%; 
+                   padding-bottom: 20px;
+               }
+           }
         }
     }
 }
 
 @media(max-width: 370px){
     .main-logo {
-        font-size: 45px; 
+        font-size: 40px; 
         img {
             width: 100px;
             height: 100px; 
@@ -264,6 +321,7 @@ footer {
         img {
             width: 50px;
             height: 50px; 
+            padding-right: 10px;
         }
     }
     .main-section {
@@ -271,11 +329,20 @@ footer {
            margin-top: 0; 
         }
     }
+    footer {
+        .container {
+            .bookie-map{
+                a {
+                    width: 60px;
+                }
+            }
+        }
+    }
 }
 
 @media(max-width: 320px){
     .bar-nav {
-        height: 150px;
+        height: 100px;
     }
     .main-nav-list {
         li {
