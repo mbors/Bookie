@@ -11,7 +11,13 @@ class BookieBooksSubNav extends React.Component{
         }
 
         handleMouseOver = () => {
-            let submenuShow = <ul className="main-nav-submenu"><li><a href="">Future</a></li><li><a href="">Now</a></li><li><a href="">Past</a></li></ul> 
+            let submenuShow = 
+            <ul className="main-nav-submenu">
+                <li><a href="">Future</a></li>
+                <li><a href="">Now</a></li>
+                <li><a href="">Past</a></li>
+            </ul> 
+            
             this.setState({
               submenu: submenuShow
             })

@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-      "start": "./node_modules/.bin/webpack-dev-server --config webpack.config.js --port 3002 --hot --inline",
+      "start": "./node_modules/.bin/webpack-dev-server --config webpack.config.js --port 3004 --hot --inline",
       "test": "echo \"Error: no test specified\" && exit 1",
       "bundle": "./node_modules/.bin/webpack --config webpack.config.js"
     },

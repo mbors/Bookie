@@ -140,6 +140,12 @@ body {
             font-weight: 900; 
             max-width: 30%;
             color: $myPink; 
+            a {
+                border-bottom: none; 
+                &:hover {
+                    border-bottom: none; 
+                }
+            }
           }
           a {
               text-decoration: none; 
