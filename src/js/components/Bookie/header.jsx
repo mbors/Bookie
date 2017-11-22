@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Link } from 'react-router';
 
 
 class BookieBooksSubNav extends React.Component{
@@ -11,7 +12,12 @@ class BookieBooksSubNav extends React.Component{
         }
 
         handleMouseOver = () => {
-            let submenuShow = <ul className="main-nav-submenu"><li><a href="">Future</a></li><li><a href="">Now</a></li><li><a href="">Past</a></li></ul> 
+            let submenuShow = 
+            <ul className="main-nav-submenu">
+                <li><a href="">Future</a></li>
+                <li><a href="">Now</a></li>
+                <li><a href="">Past</a></li>
+            </ul> 
             this.setState({
               submenu: submenuShow
             })
@@ -49,7 +55,7 @@ class BookieHiddenNav extends React.Component {
             <nav className="main-nav-list-bar">
                     <ul className="main-nav-list">
                         <li><a href="" className="main-link">Bookie Books</a></li>
-                                <li><a href="">Future</a></li>
+                                <li><Link to="/future">Future</Link></li>
                                 <li><a href="">Now</a></li>
                                 <li><a href="">Past</a></li>
                         <li><a href="" className="main-link">Bookie Quotes</a>
