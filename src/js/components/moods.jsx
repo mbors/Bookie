@@ -23,7 +23,9 @@ class MoodsMainSection extends React.Component{
 
        this.setState({
            okAsk: okAskClick,
-           isGood: ""
+           isGood: "",
+           somethingFunny: "",
+           lifeSucks: "",
        })
     }
 
@@ -59,16 +61,16 @@ class MoodsMainSection extends React.Component{
 
         //frst question answers
         let noAnswer = 
-        <div className="article-content">
-            <div className="article-title">
-                    Hmmm.. I do not think I can draw a quote for you then.. What about reading an uplifting book?
+        <div className="container-moods">
+            <div className="question">
+                 Hmmm.. I do not think I can draw a quote for you then.. What about reading an uplifting book?
+                 <a href="https://www.goodreads.com/shelf/show/uplifting"> here</a> are some suggestions
             </div>
-                <p className="snippet"><a href="https://www.goodreads.com/shelf/show/uplifting">here</a> are some suggestions</p>
         </div>
 
         let life = 
-        <div className="article-content">
-            <div className="article-title">
+        <div className="container-moods">
+            <div className="question">
                 Is life good today?
             </div>
             <button onClick={this.handleClick2}>Yes!</button><button onClick={this.handleClick2}>No</button>
@@ -86,8 +88,8 @@ class MoodsMainSection extends React.Component{
 
         //second question answers
         let lifeGood = 
-        <div>
-            <div>Good to hear that! Wanna hear something heart-warming?</div>
+        <div className="container-moods">
+            <div className="question">Good to hear that! Wanna hear something funny?</div><br/>
             <div>
                 <button onClick={this.handleClick3}>That's a good idea!</button>
                 <button onClick={this.handleClick3}>I would prefer something nostalgic!</button>
@@ -95,8 +97,8 @@ class MoodsMainSection extends React.Component{
         </div>
 
         let lifeSucks =
-        <div>
-            <div>Oh no! Let's cheer you up! Wanna hear something uplifting?</div>
+        <div className="container-moods">
+            <div className="question">Oh no! Let's cheer you up! Wanna hear something uplifting?</div>
             <div><button onClick={this.handleClick4}>That's a good idea!</button>
             <button onClick={this.handleClick4}>Naaah, tell me what's the purpose of life!</button>
             </div>
@@ -141,6 +143,36 @@ class MoodsMainSection extends React.Component{
         let nostalgicQuotesNumber = Number(nostalgicQuotes.length) - 1
         //losuje liczbe z tego przedzialu
         let randomNostalgicIndex  = Math.floor(Math.random() * (nostalgicQuotesNumber - 0 + 1)) + 0
+
+
+        //szukam life cytatow
+        let lifeQuotes = []
+        let lifeAuthorTitle = []
+        for(let i=0; i< this.state.responseLength; i++){
+            if(this.state.tags[i] == "purpose"){
+                lifeQuotes.push(this.state.quotes[i])
+                lifeAuthorTitle.push(this.state.titleAuthor[i])
+            }
+        }
+        //sprawdzam ile mam cytatow
+        let lifeQuotesNumber = Number(lifeQuotes.length) - 1
+        //losuje liczbe z tego przedzialu
+        let randomLifeIndex  = Math.floor(Math.random() * (lifeQuotesNumber - 0 + 1)) + 0
+
+
+        //szukam funny cytatow
+        let funnyQuotes = []
+        let funnyAuthorTitle = []
+        for(let i=0; i< this.state.responseLength; i++){
+            if(this.state.tags[i] == "funny"){
+                funnyQuotes.push(this.state.quotes[i])
+                funnyAuthorTitle.push(this.state.titleAuthor[i])
+            }
+        }
+        //sprawdzam ile mam cytatow
+        let funnyQuotesNumber = Number(funnyQuotes.length) - 1
+        //losuje liczbe z tego przedzialu
+        let randomFunnyIndex  = Math.floor(Math.random() * (funnyQuotesNumber - 0 + 1)) + 0
         
 
         //life is good. wanna hear something funny? 
@@ -148,9 +180,9 @@ class MoodsMainSection extends React.Component{
         if(this.state.somethingFunny == ""){
             finalLifeGood = ""
         } else if (this.state.somethingFunny  == "That's a good idea!"){
-            finalLifeGood = "coscos"
+            finalLifeGood = funnyQuotes[randomFunnyIndex] + "         " + funnyAuthorTitle[randomFunnyIndex]
         } else {
-            finalLifeGood = "coscosinnego"
+            finalLifeGood = nostalgicQuotes[randomNostalgicIndex] + nostalgicAuthorTitle[randomNostalgicIndex]
         }
 
         //life sucks. wanna hear something uplifting? 
@@ -160,7 +192,7 @@ class MoodsMainSection extends React.Component{
         } else if (this.state.lifeSucks  == "That's a good idea!"){
             finalLifeSucks = upliftingQuotes[myRandomQuoteIndex] + upliftingAuthorTitle[myRandomQuoteIndex]
         } else {
-            finalLifeSucks = nostalgicQuotes[randomNostalgicIndex] + nostalgicAuthorTitle[randomNostalgicIndex]
+            finalLifeSucks = lifeQuotes[randomLifeIndex] + lifeAuthorTitle[randomLifeIndex]
         }
 
         //life sucks. purpose of life 
@@ -172,12 +204,12 @@ class MoodsMainSection extends React.Component{
                 <div className="container">
                         <div className="section1">
                             <h2 className="page-title">Bookie Moods<span> .</span></h2>
-                                <div>Hi there! Let me find a suitable quote for you today. But first, I'll need you to answer some questions..</div>
-                                <div><button onClick={this.handleClick}>Ok</button><button onClick={this.handleClick}>No</button></div>
-                                {secondQuestion}
-                                {thirdQuestion}
-                                {finalLifeSucks}
-                                {finalLifeGood}
+                                <div className="question">Hi there! Let me find a suitable quote for you today. But first, I'll need you to answer some questions..
+                                <button onClick={this.handleClick}>Ok</button><button onClick={this.handleClick}>No</button></div>
+                                <div className="myQuote">{secondQuestion}</div>
+                                <div className="myQuote">{thirdQuestion}</div>
+                                <div className="myQuote">{finalLifeSucks}</div>
+                                <div className="myQuote">{finalLifeGood}</div>
                         </div>
                 </div>
             </div>

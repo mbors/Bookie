@@ -216,7 +216,47 @@ footer {
         }
     }
 }
+//to be placed somewhere nicely
+button {
+    cursor: pointer; 
+    display: inline-block;
+    font-family: 'Indie Flower', cursive;
+    font-size: 20px;
+    transition: all 0.1s;
+    background-color: transparent;
+    border: none;
+    color: $myPink; 
+    &:focus {
+        outline: none; 
+    }
+    &:hover {
+        color: $myBlue; 
+    }
+}
 
+.question {
+    font-size: 20px;
+    padding-bottom: 40px;
+    a {
+        text-decoration: none; 
+        color: $myPink; 
+        transition: 0.2s all;
+        &:hover {
+            color: $myBlue;
+        }
+    }
+}
+.container-moods {
+    display: flex; 
+    flex-direction: row; 
+}
+
+
+
+
+.myQuote {
+    font-size: 25px;
+}
 //navigation toggle
 .main-nav-toggle {
     display: none; 
