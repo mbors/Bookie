@@ -11,9 +11,10 @@ class Routing extends React.Component{
     render(){
         return (
         <Router history={hashHistory}>
-            <Route path='/' component={Bookie}>
-                <Route path='test' component={Test}/>
-            </Route>
+            <Route path="/" component={Bookie}/>
+            {/* <Route path='/' component={Bookie}> */}
+                <Route path='/test' component={Test}/>
+            {/* </Route> */}
         </Router>
         )
     }

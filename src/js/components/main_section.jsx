@@ -1,6 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+//section moods 
+
+// class Moods extends React.Component{
+//     constructor(props){
+//         super(props)
+//         this.state = {
+//             quotes: []
+//         }
+//     }
+//     render(){
+//         return(
+
+//         )
+//     }
+// }
+
+//section quotes
 class Quotes extends React.Component{
     constructor(props){
         super(props)
@@ -60,6 +77,7 @@ class Quotes extends React.Component{
     }
 }
 
+//section Future
 class BookieBooksFuture extends React.Component{
     constructor(props){
         super(props)
@@ -70,6 +88,9 @@ class BookieBooksFuture extends React.Component{
             responseLength: 0,
         }
     }
+    handleClick = (e) => {
+        console.log("klik")
+    }
     render(){
         let myFutureBooks = []
                 for(let i=0; i<this.state.responseLength - 1; i++){
@@ -77,7 +98,7 @@ class BookieBooksFuture extends React.Component{
                         <div className="article-content">
                             <div className="article-title">{this.state.titleAuthor[i]}</div>
                             <p className="snippet">{this.state.description[i]}</p> 
-                            <button>+Now</button>
+                            <button onClick={this.handleClick}>+Now</button>
                         </div>
                 )
             }
@@ -119,6 +140,8 @@ class BookieBooksFuture extends React.Component{
     }
 }
 
+//section Current
+
 class BookieBooksCurrent extends React.Component{
     render(){
         return(
@@ -159,6 +182,7 @@ class BookieBooksPast extends React.Component{
 }
 
 
+//main page - BookieNews
 class BookieNews extends React.Component{
     constructor(props){
         super(props)
@@ -192,6 +216,7 @@ class BookieNews extends React.Component{
                 <BookieBooksCurrent/>
                 <BookieBooksPast/>
                 <Quotes/>
+                {/* <Moods/> */}
             </div>
         )
 

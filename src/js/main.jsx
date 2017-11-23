@@ -4,9 +4,9 @@ import {Bookie} from './components/bookie.jsx'
 import {Routing} from './components/routing.jsx'
 
 
-// require('../sass/main.scss');
 
+// require('../sass/main.scss');
 ReactDOM.render(
-    <Bookie/>,
+    <Routing/>,
     document.getElementById('app')
 );
