@@ -18,10 +18,4 @@ class Bookie extends React.Component {
     }
 }
 
-
-// ReactDOM.render(
-//     <Bookie/>,
-//     document.getElementById('app')
-// );
-
 export {Bookie}

@@ -57,7 +57,7 @@ class BookieHiddenNav extends React.Component {
             <nav className="main-nav-list-bar">
                     <ul className="main-nav-list">
                         <li><a href="" className="main-link">Bookie Books</a></li>
-                        <li><a href="">Future</a></li>
+                        <li><Link to="/test">Test</Link></li>
                         <li><a href="">Now</a></li>
                         <li><a href="">Past</a></li>
                         <li><a href="" className="main-link">Bookie Quotes</a></li>
