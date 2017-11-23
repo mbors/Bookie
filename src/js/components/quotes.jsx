@@ -2,27 +2,24 @@ import React from 'react';
 import {Header} from './header.jsx'
 import {Footer} from './footer.jsx'
 
-class FutureMainSection extends React.Component{
+class QuotesMainSection extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            description: [],
-            isbn: [],
+            quotes: [],
             titleAuthor: [],
+            tags: [],
             responseLength: 0,
         }
     }
-    handleClick = (e) => {
-        console.log("klik")
-    }
     render(){
-        let myFutureBooks = []
+        let bookieQuotes = []
                 for(let i=0; i<this.state.responseLength - 1; i++){
-                    myFutureBooks.push(
+                    bookieQuotes.push(
                         <div className="article-content">
                             <div className="article-title">{this.state.titleAuthor[i]}</div>
-                            <p className="snippet">{this.state.description[i]}</p> 
-                            <button onClick={this.handleClick}>+Now</button>
+                            <p className="snippet">{this.state.quotes[i]}</p> 
+                            <p className="tag">#{this.state.tags[i]}</p>
                         </div>
                 )
             }
@@ -32,48 +29,48 @@ class FutureMainSection extends React.Component{
             <div className="main-section">
                 <div className="container">
                         <div className="section1">
-                            <h2 className="page-title">Bookie Future<span> .</span></h2>
-                            {myFutureBooks}
+                            <h2 className="page-title">Bookie Quotes<span> .</span></h2>
+                            {bookieQuotes}
                         </div>
                 </div>
             </div>
         )
     }
     componentDidMount(){
-        fetch('https://bookie-a3e9e.firebaseio.com/BookieBooks.json').then(resp=>{
-                return resp.json();
-        }).then(response =>{
-            let myDescription = [];
-            let myIsbn = [];
+        fetch('https://bookie-a3e9e.firebaseio.com/BookieBooks.json')
+        .then(resp=>{
+            return resp.json();
+        }).then(response=>{
+            let myQuotes = [];
             let myTitleAuthor = [];
-            let myResponseLength = response.length;
-     
+            let myTags = [];
+            let myResponseLenght = response.length;
             for (let i=1; i<response.length; i++){
-                myDescription.push(response[i].description)
-                myIsbn.push(response[i].isbn)
+                myQuotes.push(response[i].quote)
                 myTitleAuthor.push(response[i].titleAuthor)
+                myTags.push(response[i].tags)
             }
             this.setState({
-                description: myDescription,
-                isbn: myIsbn,
+                quotes: myQuotes,
                 titleAuthor: myTitleAuthor,
-                responseLength: myResponseLength
+                responseLength: myResponseLenght,
+                tags: myTags
             })
-          
+            console.log(response)
         })
     }
 }
 
-class Future extends React.Component{
+class Quotes extends React.Component{
     render(){
         return(
             <div>
                 <Header/>
-                <FutureMainSection/>
+                <QuotesMainSection/>
                 <Footer/>
             </div>
         )
     }
 }
 
-export {Future}
+export {Quotes}

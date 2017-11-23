@@ -14,7 +14,6 @@ class BookieBooksSubNav extends React.Component{
         handleMouseOver = () => {
             let submenuShow = 
             <ul className="main-nav-submenu">
-                {/* <li><a href="">Future</a></li> */}
                 <li><Link to="/future">Future</Link></li>
                 <li><a href="">Current</a></li>
                 <li><a href="">Past</a></li>
@@ -38,8 +37,7 @@ class BookieBooksSubNav extends React.Component{
                    <li onMouseLeave={this.handleMouseOut} onMouseEnter={this.handleMouseOver}><a href="">Bookie Books</a>
                             {this.state.submenu}
                     </li>
-                   <li><a href="">Bookie Quotes</a>
-                    </li>
+                    <li><Link to="/quotes">Bookie Quotes</Link></li>
                    <li><a href="">Bookie Moods</a></li>
                </ul>
            </nav>
@@ -60,7 +58,7 @@ class BookieHiddenNav extends React.Component {
                         <li><Link to="/future">Future</Link></li>
                         <li><a href="">Now</a></li>
                         <li><a href="">Past</a></li>
-                        <li><a href="" className="main-link">Bookie Quotes</a></li>
+                        <li><Link to="/quotes" className="main-link">Bookie Quotes</Link></li>
                         <li><a href="" className="main-link">Bookie Moods</a></li>
                     </ul>
             </nav>
