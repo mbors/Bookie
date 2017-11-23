@@ -133,6 +133,7 @@ body {
               padding-left: 40px;
               padding-right: 40px;
               width: 400px;
+              line-height: 20px;
           }
           .article-title {
             align-items: center; 
@@ -140,6 +141,7 @@ body {
             font-weight: 900; 
             max-width: 30%;
             color: $myPink; 
+            line-height: 23px;
             a {
                 border-bottom: none; 
                 &:hover {
@@ -156,6 +158,11 @@ body {
                   color: $myBlue; 
                   border-bottom: 1px solid $myPink;
               }
+          }
+          .tag {
+              font-size: 20px;
+              color: $myDark;
+              border-bottom: 1px solid $myBlue; 
           }
        }
     }
@@ -269,7 +276,7 @@ footer {
 }
     
 
-@media(max-width: 450px){
+@media(max-width: 600px){
 
     .bar-nav {
         height: 100px; 
@@ -303,6 +310,7 @@ footer {
                align-items: center; 
                justify-content: center; 
                .article-title{
+                   padding-left: 10px;
                    max-width: 80%; 
                    padding-bottom: 10px;
                }
@@ -310,6 +318,9 @@ footer {
                    max-width: 100%; 
                    padding-bottom: 20px;
                }
+           }
+           h2{
+               padding-left: 10px;
            }
         }
     }
