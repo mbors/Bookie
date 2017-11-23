@@ -197,25 +197,25 @@ class BookieNews extends React.Component{
 
     }
     componentDidMount(){
-            fetch('https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=651f2d666d474593a7166bd2238e94aa&q=books')
-            .then(resp=>{
-                return resp.json();
-            })
-            .then(response=>{
-                let myHeadlines = [];
-                let myNews = [];
-                let myUrls = [];
-                for(let i=0; i<5; i++){
-                    myHeadlines.push(response.response.docs[i].headline.main)
-                    myNews.push( response.response.docs[i].snippet)
-                    myUrls.push(response.response.docs[i].web_url)
-                }
-                this.setState({
-                    headlineTab: myHeadlines,
-                    newsTab: myNews,
-                    urlTab: myUrls
-                })
-            })
+            // fetch('https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=651f2d666d474593a7166bd2238e94aa&q=books')
+            // .then(resp=>{
+            //     return resp.json();
+            // })
+            // .then(response=>{
+            //     let myHeadlines = [];
+            //     let myNews = [];
+            //     let myUrls = [];
+            //     for(let i=0; i<5; i++){
+            //         myHeadlines.push(response.response.docs[i].headline.main)
+            //         myNews.push( response.response.docs[i].snippet)
+            //         myUrls.push(response.response.docs[i].web_url)
+            //     }
+            //     this.setState({
+            //         headlineTab: myHeadlines,
+            //         newsTab: myNews,
+            //         urlTab: myUrls
+            //     })
+            // })
         }
 }
 

@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Footer} from './footer.jsx';
 import {Header} from './header.jsx';
-import {BookieNews} from './main_section.jsx'
+import {BookieNews} from './bookieMainSection.jsx'
 
 
 

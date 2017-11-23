@@ -14,12 +14,19 @@ class BookieBooksSubNav extends React.Component{
         handleMouseOver = () => {
             let submenuShow = 
             <ul className="main-nav-submenu">
+<<<<<<< HEAD:src/js/components/header.jsx
                 {/* <li><a href="">Future</a></li> */}
                 <li><Link to="/test">Test</Link></li>
                 <li><a href="">Current</a></li>
                 <li><a href="">Past</a></li>
             </ul> 
         
+=======
+                <li><a href="">Future</a></li>
+                <li><a href="">Now</a></li>
+                <li><a href="">Past</a></li>
+            </ul> 
+>>>>>>> 600d7e02ec9079c090653cf4536836e60759eb2c:src/js/components/Bookie/header.jsx
             this.setState({
               submenu: submenuShow
             })
@@ -57,10 +64,18 @@ class BookieHiddenNav extends React.Component {
             <nav className="main-nav-list-bar">
                     <ul className="main-nav-list">
                         <li><a href="" className="main-link">Bookie Books</a></li>
+<<<<<<< HEAD:src/js/components/header.jsx
                         <li><a href="">Future</a></li>
                         <li><a href="">Now</a></li>
                         <li><a href="">Past</a></li>
                         <li><a href="" className="main-link">Bookie Quotes</a></li>
+=======
+                                <li><Link to="/future">Future</Link></li>
+                                <li><a href="">Now</a></li>
+                                <li><a href="">Past</a></li>
+                        <li><a href="" className="main-link">Bookie Quotes</a>
+                            </li>
+>>>>>>> 600d7e02ec9079c090653cf4536836e60759eb2c:src/js/components/Bookie/header.jsx
                         <li><a href="" className="main-link">Bookie Moods</a></li>
                     </ul>
             </nav>
