@@ -18,48 +18,6 @@ import ReactDOM from 'react-dom';
 // }
 
 
-//section Current
-
-class BookieBooksCurrent extends React.Component{
-    render(){
-        return(
-            <div className="main-section">
-                <div className="container">
-                        <div className="section1">
-                            <h2 className="page-title">Bookie Current<span> .</span></h2>
-                            <div className="article-content">
-                                <div className="article-title">Book Title and Author Goes Here</div>
-                                <p className="snippet">Book Description Goes Here</p> 
-                                <a href="">+Past</a>
-                            </div>
-                        </div>
-                </div>
-            </div>
-        )
-    }
-}
-
-class BookieBooksPast extends React.Component{
-    render(){
-        return(
-            <div className="main-section">
-                <div className="container">
-                        <div className="section1">
-                            <h2 className="page-title">Bookie Past<span> .</span></h2>
-                            <div className="article-content">
-                                <div className="article-title">
-                                    Book Title and Author Goes Here 
-                                </div>
-                                <p className="snippet">Book Description Goes Here Book Description Goes Here Book Description Goes Here</p> 
-                            </div>
-                        </div>
-                </div>
-            </div>
-        )
-    }
-}
-
-
 //main page - BookieNews
 class BookieNews extends React.Component{
     constructor(props){
@@ -90,8 +48,6 @@ class BookieNews extends React.Component{
                             {mySection}
                         </div>
                 </div>
-                <BookieBooksCurrent/>
-                <BookieBooksPast/>
                 {/* <Moods/> */}
             </div>
         )

@@ -15,8 +15,8 @@ class BookieBooksSubNav extends React.Component{
             let submenuShow = 
             <ul className="main-nav-submenu">
                 <li><Link to="/future">Future</Link></li>
-                <li><a href="">Current</a></li>
-                <li><a href="">Past</a></li>
+                <li><Link to="/current">Current</Link></li>
+                <li><Link to="/past">Past</Link></li>
             </ul> 
         
             this.setState({
@@ -56,8 +56,8 @@ class BookieHiddenNav extends React.Component {
                     <ul className="main-nav-list">
                         <li><a href="" className="main-link">Bookie Books</a></li>
                         <li><Link to="/future">Future</Link></li>
-                        <li><a href="">Now</a></li>
-                        <li><a href="">Past</a></li>
+                        <li><Link to="/current">Current</Link></li>
+                        <li><Link to="/past">Past</Link></li>
                         <li><Link to="/quotes" className="main-link">Bookie Quotes</Link></li>
                         <li><a href="" className="main-link">Bookie Moods</a></li>
                     </ul>
