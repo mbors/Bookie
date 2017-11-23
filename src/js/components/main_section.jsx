@@ -1,22 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-//section moods 
-
-// class Moods extends React.Component{
-//     constructor(props){
-//         super(props)
-//         this.state = {
-//             quotes: []
-//         }
-//     }
-//     render(){
-//         return(
-
-//         )
-//     }
-// }
-
 
 //main page - BookieNews
 class BookieNews extends React.Component{
@@ -44,7 +28,8 @@ class BookieNews extends React.Component{
             <div className="main-section">
                 <div className="container">
                         <div className="section1">
-                            <h2 className="page-title">Bookie News<span> .</span></h2>
+                            <h2 className="page-title">Bookie<span> .</span></h2>
+                            <h3>Bookie News</h3>
                             {mySection}
                         </div>
                 </div>

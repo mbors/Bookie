@@ -38,7 +38,7 @@ class BookieBooksSubNav extends React.Component{
                             {this.state.submenu}
                     </li>
                     <li><Link to="/quotes">Bookie Quotes</Link></li>
-                   <li><a href="">Bookie Moods</a></li>
+                    <li><Link to="/moods">Bookie Moods</Link></li>
                </ul>
            </nav>
             )
@@ -59,7 +59,7 @@ class BookieHiddenNav extends React.Component {
                         <li><Link to="/current">Current</Link></li>
                         <li><Link to="/past">Past</Link></li>
                         <li><Link to="/quotes" className="main-link">Bookie Quotes</Link></li>
-                        <li><a href="" className="main-link">Bookie Moods</a></li>
+                        <li><Link to="/moods" className="main-link">Bookie Moods</Link></li>
                     </ul>
             </nav>
         </div>
