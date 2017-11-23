@@ -10,8 +10,17 @@ class QuotesMainSection extends React.Component{
             titleAuthor: [],
             tags: [],
             responseLength: 0,
+            tagSearched: ""
         }
     }
+
+    handleChange = (e) => {
+        this.setState({
+            tagSearched: e.target.value,
+        })
+    }
+  
+
     render(){
         let bookieQuotes = []
                 for(let i=0; i<this.state.responseLength - 1; i++){
@@ -24,12 +33,29 @@ class QuotesMainSection extends React.Component{
                 )
             }
 
-
-        return(
+        let quoteMatch = []
+            for(let i=0; i<this.state.responseLength -1; i++){
+                if(this.state.tags[i] == this.state.tagSearched){
+                    quoteMatch.push(
+                        <div className="article-content">
+                            <div className="article-title">{this.state.titleAuthor[i]}</div>
+                            <p className="snippet">{this.state.quotes[i]}</p> 
+                            <p className="tag">#{this.state.tags[i]}</p>
+                        </div>
+                    )
+                    bookieQuotes = []
+                }
+            }
+            
+            
+        return(  
             <div className="main-section">
                 <div className="container">
                         <div className="section1">
                             <h2 className="page-title">Bookie Quotes<span> .</span></h2>
+                                <span>Search by the tag:</span>
+                                <input onChange={ this.handleChange } value={this.state.tagSearched} />
+                                {quoteMatch}
                             {bookieQuotes}
                         </div>
                 </div>
@@ -56,7 +82,6 @@ class QuotesMainSection extends React.Component{
                 responseLength: myResponseLenght,
                 tags: myTags
             })
-            console.log(response)
         })
     }
 }

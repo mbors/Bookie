@@ -120,6 +120,14 @@ body {
                color: $myBlue
            }
        }
+        input {
+           width: 100px;
+           height: 20px;
+        &:focus {
+            font-family: 'Indie Flower', cursive;
+            outline: none; 
+        }
+    }
        h2 {
            padding-bottom: 20px;
        }
