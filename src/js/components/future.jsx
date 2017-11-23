@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Test extends React.Component{
+class Future extends React.Component{
     constructor(props){
         super(props)
         this.state = {
@@ -62,4 +62,4 @@ class Test extends React.Component{
     }
 }
 
-export {Test}
+export {Future}

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom'; 
 import {Bookie} from './bookie.jsx'
-import {Test} from './test.jsx'
+import {Future} from './future.jsx'
 import { Router, Route, Link, IndexLink, IndexRoute, hashHistory} from 'react-router';
 
 class Routing extends React.Component{
@@ -13,7 +13,7 @@ class Routing extends React.Component{
         <Router history={hashHistory}>
             <Route path="/" component={Bookie}/>
             {/* <Route path='/' component={Bookie}> */}
-                <Route path='/test' component={Test}/>
+                <Route path='/future' component={Future}/>
             {/* </Route> */}
         </Router>
         )
