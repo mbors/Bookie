@@ -22,7 +22,8 @@ class MoodsMainSection extends React.Component{
        let okAskClick= e.target.innerText
 
        this.setState({
-           okAsk: okAskClick
+           okAsk: okAskClick,
+           isGood: ""
        })
     }
 
@@ -30,15 +31,17 @@ class MoodsMainSection extends React.Component{
         let isGoodClick = e.target.innerText
     
         this.setState({
-            isGood: isGoodClick
+            isGood: isGoodClick,
+            somethingFunny: "",
+            lifeSucks: ""
         })
     }
 
     handleClick3 = (e) => {
         let somethingFunnyClick = e.target.innerText
-       
         this.setState({
-            somethingFunny: somethingFunnyClick
+            somethingFunny: somethingFunnyClick,
+            lifeSucks: ""
         })
     }
 
@@ -46,7 +49,8 @@ class MoodsMainSection extends React.Component{
         let lifeSucksClick = e.target.innerText
      
         this.setState({
-            lifeSucks: lifeSucksClick
+            lifeSucks: lifeSucksClick,
+            somethingFunny: ""
         })
     }
 
@@ -108,17 +112,7 @@ class MoodsMainSection extends React.Component{
             thirdQuestion = lifeGood
         }
 
-        //life is good. wanna hear something funny? 
-        let finalLifeGood
-        if(this.state.somethingFunny == ""){
-            finalLifeGood = ""
-        } else if (this.state.somethingFunny  == "That's a good idea!"){
-            finalLifeGood = "Tutaj jakis smieszny cytat"
-        } else {
-            finalLifeGood = "tutaj jakis cytat nostalgiczny "
-        }
-
-        //najpierw musze wyszukac tylko uplifting cytaty, czyli takie ktore maja tag 'uplifting' i przypisac do tablicy, popraw length... 
+        //najpierw musze wyszukac tylko uplifting cytaty, czyli takie ktore maja tag 'uplifting' i przypisac do tablicy 
         let upliftingQuotes = []
         let upliftingAuthorTitle = []
         for(let i=0; i< this.state.responseLength; i++){
@@ -127,24 +121,51 @@ class MoodsMainSection extends React.Component{
                 upliftingAuthorTitle.push(this.state.titleAuthor[i])
             }
         }
-
-        //ile mam tych cyatow? zeby wiedziec z ilu losowac
-        let upliftingQuotesNumber = Number(upliftingQuotes.length)
-        //losuje randomowa liczbe z tego przedzialu 
+        //ile mam tych cytatow? zeby wiedziec z ilu losowac
+        let upliftingQuotesNumber = Number(upliftingQuotes.length) - 1
+        //losuje liczbe z tego przedzialu 
         let myRandomQuoteIndex = Math.floor(Math.random() * (upliftingQuotesNumber - 0 + 1)) + 0
-        console.log(myRandomQuoteIndex)
-    
 
 
-        //life sucks. wanna hear something funny? 
+
+        //szukam nostalgic cytatow 
+        let nostalgicQuotes = []
+        let nostalgicAuthorTitle = []
+        for(let i=0; i< this.state.responseLength; i++){
+            if(this.state.tags[i] == "nostalgic"){
+                nostalgicQuotes.push(this.state.quotes[i])
+                nostalgicAuthorTitle.push(this.state.titleAuthor[i])
+            }
+        }
+        //sprawdzam ile mam cytatow
+        let nostalgicQuotesNumber = Number(nostalgicQuotes.length) - 1
+        //losuje liczbe z tego przedzialu
+        let randomNostalgicIndex  = Math.floor(Math.random() * (nostalgicQuotesNumber - 0 + 1)) + 0
+        
+
+        //life is good. wanna hear something funny? 
+        let finalLifeGood 
+        if(this.state.somethingFunny == ""){
+            finalLifeGood = ""
+        } else if (this.state.somethingFunny  == "That's a good idea!"){
+            finalLifeGood = "coscos"
+        } else {
+            finalLifeGood = "coscosinnego"
+        }
+
+        //life sucks. wanna hear something uplifting? 
         let finalLifeSucks
         if(this.state.lifeSucks == ""){
             finalLifeSucks = ""
         } else if (this.state.lifeSucks  == "That's a good idea!"){
-            finalLifeSucks = this.state.quotes[myRandomQuoteIndex] + this.state.titleAuthor[myRandomQuoteIndex]
+            finalLifeSucks = upliftingQuotes[myRandomQuoteIndex] + upliftingAuthorTitle[myRandomQuoteIndex]
         } else {
-            finalLifeSucks = "tutaj jakas prawda o zyciu "
+            finalLifeSucks = nostalgicQuotes[randomNostalgicIndex] + nostalgicAuthorTitle[randomNostalgicIndex]
         }
+
+        //life sucks. purpose of life 
+
+   
 
         return(
             <div className="main-section">
@@ -155,8 +176,8 @@ class MoodsMainSection extends React.Component{
                                 <div><button onClick={this.handleClick}>Ok</button><button onClick={this.handleClick}>No</button></div>
                                 {secondQuestion}
                                 {thirdQuestion}
-                                {finalLifeGood}
                                 {finalLifeSucks}
+                                {finalLifeGood}
                         </div>
                 </div>
             </div>
@@ -167,8 +188,6 @@ class MoodsMainSection extends React.Component{
         .then(resp=>{
             return resp.json();
         }).then(response=>{
-            // console.log(response.length)
-            // tutaj widzi response.length
             let myQuotes = [];
             let myTags = [];
             let myTitleAuthor = [];
