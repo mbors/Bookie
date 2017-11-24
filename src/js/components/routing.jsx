@@ -8,16 +8,21 @@ import {Quotes} from './quotes.jsx';
 import {Moods} from './moods.jsx';
 import { Router, Route, Link, IndexLink, IndexRoute, hashHistory} from 'react-router';
 
+//redux do zrobienia, zeby routing sie nie zmienial
+
 class Routing extends React.Component{
     constructor(props){
         super(props)
+      
     }
+
+   
     render(){
         return (
         <Router history={hashHistory}>
             <Route path="/" component={Bookie}/>
             {/* <Route path='/' component={Bookie}> */}
-                <Route path='/future' component={Future}/>
+                <Route path='/future' component={Future} />
                 <Route path='/current' component={Current}/>
                 <Route path='/past' component={Past}/>
                 <Route path='/quotes' component={Quotes}/>

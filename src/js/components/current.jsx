@@ -23,6 +23,7 @@ class CurrentMainSection extends React.Component{
 
 class Current extends React.Component{
     render(){
+        console.log(this.props.route.info)
         return(
             <div>
                 <Header/>

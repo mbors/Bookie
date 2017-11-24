@@ -1,8 +1,6 @@
 import React from 'react';
 import {Header} from './header.jsx'
 import {Footer} from './footer.jsx'
-//importuje komponent currentMainSection gdzie bedzie przekazywany props o dodaniu
-import {CurrentMainSection} from './current.jsx'
 
 class FutureMainSection extends React.Component{
     constructor(props){
@@ -22,10 +20,12 @@ class FutureMainSection extends React.Component{
         let clickDescriptionToMove = this.state.description[myIndex]
         let clickauthorToMove = this.state.titleAuthor[myIndex]
       
+        //ten state ma zrobic tak ze zniknie w tym komponencie ta ksiazka
         this.setState({
             descriptionToMove: clickDescriptionToMove,
             authorToMove: clickauthorToMove
         })
+
         
     }
 
@@ -81,11 +81,13 @@ class FutureMainSection extends React.Component{
 }
 
 class Future extends React.Component{
+
     render(){
+       
         return(
             <div>
                 <Header/>
-                <FutureMainSection/>
+                <FutureMainSection getInfoFuture={this.props.route.getInfo}/>
                 <Footer/>
             </div>
         )
@@ -93,27 +95,5 @@ class Future extends React.Component{
 }
 
 
-//tworze sobie fake parenta, ktory bedzie laczyl moj komponent Future i Current
-class FakeParent extends React.Component{
-    constructor(props){
-        super(props)
-        //przez state bede przekazywac info
-        this.state = {
-            description: this.props.descriptionToMove,
-            author: this.props.authorToMove,
-        }
-    }
-
-    render(){
-        //renderuje dwa komponenty, ktore chce polaczyc
-        console.log("lalalalal",this.state)
-        return(
-        <div>
-            <CurrentMainSection/>
-            <FutureMainSection descriptionToMove={this.state.descriptionToMove} authorToMove={this.state.authorToMove}/>
-        </div>
-        )
-    }
-} 
 
 export {Future}
