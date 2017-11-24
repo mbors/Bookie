@@ -100,7 +100,7 @@ class MoodsMainSection extends React.Component{
         <div className="container-moods">
             <div className="question">Oh no! Let's cheer you up! Wanna hear something uplifting?</div>
             <div><button onClick={this.handleClick4}>That's a good idea!</button>
-            <button onClick={this.handleClick4}>Naaah, tell me what's the purpose of life!</button>
+            <button onClick={this.handleClick4}>Naah, tell me what's the purpose of life!</button>
             </div>
         </div>
 
