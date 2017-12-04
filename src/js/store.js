@@ -1,15 +1,21 @@
-import {createStore} from "redux"; 
+import { createStore, compse } from 'redux';
+import { syncHistoryWithStore} from 'react-router-redux';
+import { browserHistory } from 'react-router';
 
+// import the root reducer
+import rootReducer from './reducers/index';
 
-//everytime we dispatch the store the reducer acts on this store 
-const reducer = function(){
+import description from './reducers/description';
+import titleAuthor from './reducers/titleAuthor';
 
-}
+// create an object for the default data
+const defaultState = {
+description,
+titleAuthor,
+};
 
-const store = createStore(reducer, 0)
+const store = createStore(rootReducer, defaultState);
 
-store.subscribe(()=>{
-    console.log("store changed", store.getState())
-})
+export const history = syncHistoryWithStore(browserHistory, store);
 
-store.dispatch({type: "INC", payload: 1})
+export default store;
