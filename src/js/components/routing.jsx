@@ -8,6 +8,7 @@ import {Quotes} from './quotes.jsx';
 import {Moods} from './moods.jsx';
 import { Router, Route, Link, IndexLink, IndexRoute, hashHistory} from 'react-router';
 
+
 //redux
 import {Provider} from 'react-redux';
 import store from '../store'

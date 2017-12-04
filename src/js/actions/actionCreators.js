@@ -13,5 +13,5 @@ function addFuture(bookIndex){
     }
 }
 
-export default addCurrent;
-export default addFuture;
+export {addCurrent};
+export {addFuture};
