@@ -11,7 +11,7 @@ module.exports = {
 
     output: {
         path: __dirname,
-        filename: './js/app.js'
+        filename: './src/js/app.js'
     },
 
     plugins: [
