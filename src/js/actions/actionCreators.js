@@ -2,14 +2,14 @@
 function addCurrent(bookIndex){
     return{
         type: 'ADDCURRENT_BOOK',
-        // bookIndex
+        bookIndex: bookIndex, 
     }
 }
 
 function addFuture(bookIndex){
     return{
         type: 'ADDFUTURE_BOOK',
-        // bookIndex
+        bookIndex: bookIndex, 
     }
 }
 

@@ -10,8 +10,8 @@ import { Router, Route, Link, IndexLink, IndexRoute, hashHistory} from 'react-ro
 
 //redux
 import {Provider} from 'react-redux';
-import {store} from '../store'
-import {history} from '../store'
+import store from '../store'
+import history from '../store'
 
 class Routing extends React.Component{   
     render(){
