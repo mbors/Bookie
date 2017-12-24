@@ -1,5 +1,5 @@
 # Bookie - an app for book lovers
-## Still in progress! If you wonder how does it look so far: https://mbors.github.io/Bookie/
+## Still in progress! If you wonder how it looks so far: https://mbors.github.io/Bookie/
 Bookie is an app for book lovers which allows users to: 
 * save books to-read 
 * save favourite quotes 
