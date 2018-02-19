@@ -19,7 +19,7 @@ class FutureMainSection extends React.Component{
         let myIndex = i
         let clickDescriptionToMove = this.state.description[myIndex]
         let clickauthorToMove = this.state.titleAuthor[myIndex]
-      
+     
         //ten state ma zrobic tak ze zniknie w tym komponencie ta ksiazka
         this.setState({
             descriptionToMove: clickDescriptionToMove,
