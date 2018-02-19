@@ -11,32 +11,30 @@ class BookieBooksSubNav extends React.Component{
             }
         }
 
-        handleMouseOver = () => {
-            let submenuShow = 
-            <ul className="main-nav-submenu">
-                <li><Link to="/future">Future</Link></li>
-                <li><Link to="/current">Current</Link></li>
-                <li><Link to="/past">Past</Link></li>
-            </ul> 
+        // handleMouseOver = () => {
+        //     let submenuShow = 
+        //     <ul className="main-nav-submenu">
+        //         <li><Link to="/future">Future</Link></li>
+        //         <li><Link to="/current">Current</Link></li>
+        //         <li><Link to="/past">Past</Link></li>
+        //     </ul> 
         
-            this.setState({
-              submenu: submenuShow
-            })
-        }
+        //     this.setState({
+        //       submenu: submenuShow
+        //     })
+        // }
 
-        handleMouseOut = () => {
-            let submenuHide = ""
-            this.setState({
-                submenu: submenuHide
-            })
-        }
+        // handleMouseOut = () => {
+        //     let submenuHide = ""
+        //     this.setState({
+        //         submenu: submenuHide
+        //     })
+        // }
         render(){
             return(
                 <nav className="main-nav">
                <ul className="main-nav-list">
-                   <li onMouseLeave={this.handleMouseOut} onMouseEnter={this.handleMouseOver}><a href="">Bookie Books</a>
-                            {this.state.submenu}
-                    </li>
+                    <li><Link to="/future">Bookie Books</Link></li>
                     <li><Link to="/quotes">Bookie Quotes</Link></li>
                     <li><Link to="/moods">Bookie Moods</Link></li>
                </ul>
@@ -54,10 +52,7 @@ class BookieHiddenNav extends React.Component {
         <div className="bar-nav" style={{display: styleDisplay}}>
             <nav className="main-nav-list-bar">
                     <ul className="main-nav-list">
-                        <li><a href="" className="main-link">Bookie Books</a></li>
-                        <li><Link to="/future">Future</Link></li>
-                        <li><Link to="/current">Current</Link></li>
-                        <li><Link to="/past">Past</Link></li>
+                        <li><Link to="/future" className="main-link">Bookie Books</Link></li>
                         <li><Link to="/quotes" className="main-link">Bookie Quotes</Link></li>
                         <li><Link to="/moods" className="main-link">Bookie Moods</Link></li>
                     </ul>
