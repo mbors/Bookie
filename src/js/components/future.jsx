@@ -1,10 +1,6 @@
 import React from 'react';
 import {Header} from './header.jsx'
 import {Footer} from './footer.jsx'
-<<<<<<< HEAD
-=======
-
->>>>>>> changes
 
 class FutureMainSection extends React.Component{
     constructor(props){
