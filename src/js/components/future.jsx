@@ -22,7 +22,7 @@ class FutureMainSection extends React.Component{
                         <div className="article-content">
                             <div className="article-title">{this.state.titleAuthor[i]}</div>
                             <p className="snippet">{this.state.description[i]}</p> 
-                            <div className="article-title">{this.state.status[i]}</div>
+                            <div className="status">{this.state.status[i]}</div>
                         </div>
                 )
             }
@@ -34,9 +34,9 @@ class FutureMainSection extends React.Component{
                         <div className="section1">
                             <h2 className="page-title">Bookie Books<span> .</span></h2>
                             <div className="article-content">
-                                <p className="snippet">Author & Title</p>
-                                <p className="snippet">Description</p> 
-                                <p className="snippet">Status</p>
+                                <p className="article-title heading">Author & Title</p>
+                                <p className="snippet heading">Description</p> 
+                                <p className="status heading">Status</p>
                             </div>
                             {myFutureBooks}
                         </div>

@@ -138,16 +138,27 @@ body {
            align-items: center; 
            padding-bottom: 50px;
           .snippet{
-              padding-left: 40px;
-              padding-right: 40px;
-              width: 400px;
+              padding-left: 20px;
+              padding-right: 20px;
+              width: 700px;
               line-height: 20px;
+          }
+          .status {
+             padding-left: 10px; 
+              width: 200px;
+              color: $myPink; 
+          }
+          .heading {
+              font-size:18px; 
+              color: $myBlue; 
+
           }
           .article-title {
             align-items: center; 
             font-size: 18px;
             font-weight: 900; 
-            max-width: 30%;
+            width: 300px; 
+      
             color: $myPink; 
             line-height: 23px;
             a {
@@ -169,6 +180,7 @@ body {
           }
           .tag {
               font-size: 20px;
+              width: 200px; 
               color: $myDark;
               border-bottom: 1px solid $myBlue; 
           }
@@ -269,7 +281,6 @@ button {
     display: none; 
 }
 
-//media queries
 @media (max-width: 950px){
     .main-logo{
         padding-left: 20px;
@@ -325,7 +336,14 @@ button {
     
 
 @media(max-width: 600px){
-
+    .question {
+        padding-left: 20px;
+        padding-right: 20px; 
+    }
+    .myQuote {
+        padding-left: 20px;
+        padding-right: 20px; 
+    }
     .bar-nav {
         height: 100px; 
     }
@@ -371,6 +389,9 @@ button {
                padding-left: 10px;
            }
         }
+    }
+    .heading {
+        display: none; 
     }
 }
 
@@ -420,4 +441,9 @@ button {
 //social media icons - flaticon
 .visibility {
     display: block; 
+}
+
+//search
+.search-section {
+    margin-bottom: 40px; 
 }

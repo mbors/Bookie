@@ -27566,7 +27566,7 @@ var FutureMainSection = function (_React$Component) {
                     ),
                     _react2.default.createElement(
                         'div',
-                        { className: 'article-title' },
+                        { className: 'status' },
                         this.state.status[i]
                     )
                 ));
@@ -27596,17 +27596,17 @@ var FutureMainSection = function (_React$Component) {
                             { className: 'article-content' },
                             _react2.default.createElement(
                                 'p',
-                                { className: 'snippet' },
+                                { className: 'article-title heading' },
                                 'Author & Title'
                             ),
                             _react2.default.createElement(
                                 'p',
-                                { className: 'snippet' },
+                                { className: 'snippet heading' },
                                 'Description'
                             ),
                             _react2.default.createElement(
                                 'p',
-                                { className: 'snippet' },
+                                { className: 'status heading' },
                                 'Status'
                             )
                         ),
@@ -27805,11 +27805,15 @@ var QuotesMainSection = function (_React$Component) {
                             )
                         ),
                         _react2.default.createElement(
-                            'span',
-                            null,
-                            'Search by the tag:'
+                            'div',
+                            { className: 'search-section' },
+                            _react2.default.createElement(
+                                'span',
+                                null,
+                                'Search by the tag:'
+                            ),
+                            _react2.default.createElement('input', { onChange: this.handleChange, value: this.state.tagSearched })
                         ),
-                        _react2.default.createElement('input', { onChange: this.handleChange, value: this.state.tagSearched }),
                         quoteMatch,
                         bookieQuotes
                     )
