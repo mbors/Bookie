@@ -54,7 +54,7 @@ class QuotesMainSection extends React.Component{
                         <div className="section1">
                             <h2 className="page-title">Bookie Quotes<span> .</span></h2>
                                 <div className="search-section">
-                                    <span>Search by the tag:</span>
+                                    <span>Search by the tag:</span><br/>
                                     <input onChange={ this.handleChange } value={this.state.tagSearched} />
                                 </div>    
                              {quoteMatch}

@@ -1,5 +1,5 @@
 # Bookie 
-## Preview: https://mbors.github.io/Bookie/
+## <a href="https://mbors.github.io/Bookie/">Demo</a>
 Bookie is an app for book lovers which allows users to: 
 * save books to-read 
 * save favourite quotes 
